@@ -5,6 +5,8 @@ import Perfil from '../views/perfil.vue'
 import Cita from '../views/cita.vue'
 import Main from '../views/main.vue'
 import Admin from '../views/administrador.vue'
+import Reporte from '../views/reporte.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,6 +34,11 @@ const routes = [
     path: '/admin',
     name: 'adminDentito',
     component: Admin
+  },
+  {
+    path: '/reporte',
+    name: 'reporte',
+    component: Reporte
   },
 
 ]
