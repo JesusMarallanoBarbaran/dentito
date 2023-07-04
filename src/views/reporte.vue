@@ -36,7 +36,7 @@
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
-                <div class="card-header">Datos Personales</div>
+                <div class="card-header">Datos Personales Jesus</div>
                 <div id="datos" class="col-md-7 ps-md-4">
                 <div style="margin: 0;" class="row">
                     <div class="col-12 bg-white px-3 mb-3 pb-3">
