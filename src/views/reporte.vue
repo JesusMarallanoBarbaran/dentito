@@ -13,6 +13,7 @@
     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
   </li> -->
 </ul>
+
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <hr class="mt-0 mb-4">
@@ -28,7 +29,7 @@
                     <div class="small font-italic text-muted mb-4"></div>
                     <!-- Profile picture upload button-->
                     <router-link :to="{ name: 'reservarCita' }">
-                    <button class="btn btn-primary" type="button">Reservar Cita</button>
+                    <button class="btn btn-primary" type="button">Tus atenciones</button>
                     </router-link>
                 </div>
             </div>
@@ -36,29 +37,13 @@
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
-                <div class="card-header">Datos Personales Jesus</div>
+                <div class="card-header">Busqueda de Historial de Paciente</div>
                 <div id="datos" class="col-md-7 ps-md-4">
                 <div style="margin: 0;" class="row">
                     <div class="col-12 bg-white px-3 mb-3 pb-3">
-                        <div class="d-flex align-items-center justify-content-between border-bottom">
-                            <p class="py-2">Nombres</p>
-                            <p class="py-2 text-muted">Juan Pablo</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between border-bottom">
-                            <p class="py-2">Apellidos</p>
-                            <p class="py-2 text-muted">Quispe Mamani</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between border-bottom">
-                            <p class="py-2">Celular</p>
-                            <p class="py-2 text-muted">999999999</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between border-bottom">
-                            <p class="py-2">Direccion</p>
-                            <p class="py-2 text-muted">Av Peru</p>
-                        </div>
                         <div class="d-flex align-items-center justify-content-between">
                             <p class="py-2">DNI</p>
-                            <p class="py-2 text-muted"> 12345678</p>
+                            <input type="text" class="login__input" placeholder="Ingrese un DNI">
                         </div>
                     </div>
               
@@ -74,28 +59,32 @@
     <tr>
       <th scope="col">Nro</th>
       <th scope="col">Fecha y hora</th>
-      <th scope="col">Diente picado</th>
-      <th scope="col">Luis Alberto</th>
+      <th scope="col">Sede</th>
+      <th scope="col">Médico</th>
+      <th scope="col">Ver Historial</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>2023-04-11 07:00</td>
-      <td>Diente picado</td>
-      <td>Luis Alberto</td>
+      <td>2023-06-11 07:00</td>
+      <td>Los Olivos</td>
+      <td>Dr. Loayza Montes, José</td>
+      <td><b-button variant="danger"  @click="exportPDF">PDF</b-button></td>
     </tr>
-    <tr>
+     <tr>
       <th scope="row">2</th>
-      <td>2023-06-15 14:00</td>
-      <td>Diente picado</td>
-      <td>Luis Alberto</td>
+      <td>2023-05-12 10:00</td>
+      <td>Los Olivos</td>
+      <td>Dr. Loayza Montes, José</td>
+      <td><b-button variant="danger"  @click="exportPDF">PDF</b-button></td>
     </tr>
-    <tr>
+     <tr>
       <th scope="row">3</th>
-      <td>2023-02-11 07:00</td>
-      <td>Diente picado</td>
-      <td>Luis Alberto</td>
+      <td>2023-04-04 09:00</td>
+      <td>Los Olivos</td>
+      <td>Dr. Loayza Montes, José</td>
+      <td><b-button variant="danger"  @click="exportPDF">PDF</b-button></td>
     </tr>
   </tbody>
 </table>
@@ -117,12 +106,40 @@
 </template>
 
 <script>
+
 export default{
     name:"PerfilUsuario",
 
   mounted(){
 	document.body.style.backgroundColor = '#f2f5fa';
   },
+
+  data(){
+    return {
+      todos: [
+        {title: 'Paciente 1', description: 'Curación'},
+        {title: 'Paciente 2', description: 'Profolaxis'},
+        {title: 'Paciente 3', description: 'Brackets'},
+      ]
+    }
+  },
+
+   methods: {
+    exportPDF() {
+   /*    var vm = this
+      var columns = [
+        {title: "Title", dataKey: "title"},
+        {title: "Description", dataKey: "description"}
+      ];
+      var doc = new jsPDF('p', 'pt');
+      doc.text('To Do List', 40, 40);
+      doc.autoTable(columns, vm.todos, {
+        margin: {top: 60},
+      });
+      doc.save('todos.pdf'); */
+    }
+  }
+
 }
 
 </script>
